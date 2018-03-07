@@ -1,0 +1,51 @@
+users:
+  test@test.com:
+    username: test@test.com
+    articleIds:
+      - 1
+    commentIds:
+      - 1
+  dude@dude.com:
+    username: dude@dude.com
+    articleIds:
+      - 2
+    commentIds: []
+  hank@hank.com:
+    username: hank@hank.com
+    articleIds: []
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: Test
+    url: 'http://test.com'
+    username: test@test.com
+    commentIds:
+      - 1
+    upvotedBy:
+      - test@test.com
+      - dude@dude.com
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        body: comment 1
+        username: test@test.com
+        articleId: 1
+        upvotedBy:
+          - test@test.com
+        downvotedBy:
+          - dude@dude.com
+  '2':
+    id: 2
+    title: The Dude
+    url: 'http://dude.com'
+    username: dude@dude.com
+    commentIds: []
+    upvotedBy: []
+    downvotedBy:
+      - hank@hank.com
+nextArticleId: 3
+comments:
+  '1': *ref_0
+nextCommentId: 2
